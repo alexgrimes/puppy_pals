@@ -3,4 +3,6 @@ class Dog < ApplicationRecord
   has_many :users, through: :matches
   has_many :sessions, through: :matches 
   has_many :reviews, through: :matches
+
+  validates :name, uniqueness: :true
 end
