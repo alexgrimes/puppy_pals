@@ -14,7 +14,7 @@
       <ul>
         <li><%= link_to 'User Home', users_path(@user) %></li>
         <li><%= link_to 'See all the dogs', users_path %></li>
-        <li><%= link_to 'Book a New Session', users_path %></li>
+        <li><%= link_to 'Book a New Session', appointments_path %></li>
 
         <% if @current_user %>
           <li class='right'> Welcome <%=  @current_user.username %></li>                    

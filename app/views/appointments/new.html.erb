@@ -1,0 +1,9 @@
+<h1> New Appointment </h1>
+
+<%= form_for @appointment do |f| %>
+<%= f.label :appointment_datetime %>
+<%= f.text_area :appointment_datetime %>
+
+<%= f.label :dog %>
+<%= f.collection_select :dog_id, Dog.all, :id, :name %>
+<%end%>

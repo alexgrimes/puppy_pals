@@ -14,6 +14,7 @@ nick = User.create(username: "nick19")
 ########DOGS########
 dottie = Dog.create(name: "Dottie", breed: "Cattle Dog mix", size: "medium", about: "A little neurotic but the sweetest ever!", img_url: "https://kymkemp.com/wp-content/uploads/2018/10/get_image-1-3.jpg")
 belle = Dog.create(name: "Belle", breed: "Yorkie", size: "small", about: "Cuddlemuffin!", img_url: "https://kymkemp.com/wp-content/uploads/2018/10/get_image-1-3.jpg")
+frank = Dog.create(name: "Frank", breed: "Chocolate Lab", size: "medium", about: "Playful and kind!", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVhgtmXXG3yifndvf9WD-0hqOBr1hQplYNxKrCcUrnC_iPvTEE&usqp=CAU")
 
 #########Match#############
 match1 = Match.create(user_id: alex.id, dog_id: dottie.id)
