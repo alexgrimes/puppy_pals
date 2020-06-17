@@ -12,13 +12,13 @@
   <body>
 
       <ul>
-        <li><%= link_to 'User Home', users_path(@user) %></li>
-        <li><%= link_to 'See all the dogs', users_path %></li>
-        <li><%= link_to 'Book a New Session', appointments_path %></li>
+        <li><%= link_to 'See all the dogs', dogs_path %></li>
 
         <% if @current_user %>
           <li class='right'> Welcome <%=  @current_user.username %></li>                    
           <li class='right'><%= link_to "Log-Out", logout_path, method: :delete %></li>
+          <li><%= link_to 'User Home', users_path %></li>
+          <li><%= link_to 'Book a New Session', new_appointment_path %></li>
         <% else %>
           <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
           <li class='right'><%= link_to 'Login', new_login_path %></li>

@@ -12,7 +12,9 @@ class AppointmentsController < ApplicationController
   end 
 
   def create 
-    @appointment = Appointment.create(appointment_params)
+    @appointment = Appointment.new(appointment_params)
+    match = Match.create(user_id: @current_user.id, dog_id: params[:match][:dog_id])
+    @appointment.match_id = match.id
     if @appointment.save
       redirect_to @appointment
     else 
@@ -22,7 +24,7 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:user).permit(:description, :match_id, :appointment_datetime)
+    params.require(:appointment).permit(:description, :appointment_datetime)
   end 
 
 

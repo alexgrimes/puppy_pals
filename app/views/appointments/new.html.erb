@@ -2,14 +2,16 @@
 
 <h2> Let's set a date! Here are your puppy pals: </h2>
 
-<% @appointment.match.dog.each do |d| %>
-  <li><%= link_to d.name, dog_path(d) %></li>
-<% end %>
 
 <%= form_for @appointment do |f| %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+
 <%= f.label :appointment_datetime %>
-<%= f.text_area :appointment_datetime %>
+<%= f.date_select :appointment_datetime %>
 
 <%= f.label :dog %>
-<%= f.collection_select :dog_id, Dog.all, :id, :name %>
+<%= collection_select :match, :dog_id, Dog.all, :id, :name %>
+
+<%= f.submit %>
 <%end%>
