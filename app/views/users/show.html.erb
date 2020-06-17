@@ -1,0 +1,13 @@
+<h1> Welcome <%= @user.username %>!</h1>
+
+<h2> Here are your puppy pals: </h2>
+
+<% @user.matches.each do |match| %>
+  <%= link_to dog.name, dog_path(dog)%> <%= dog.img_url%> <br>
+  <%end %>
+  
+<h3> Here are your appointments: </h3>
+<% @user.appointments.each do |appointment| %>
+  <% @user_dog = @user.dogs.find(appointment.dog_id)%>
+  <%= link_to @user_dog.name, dog_path(@user_dog) %> - <%= link_to appointment.appointment_datetime.strftime("%B %d, %Y at %k:%M"), appointment_path(appointment)%><br>
+  <%end%>

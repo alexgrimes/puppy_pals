@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PuppyPals</title>
+    <title>Puppy Pals!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
-    <header>
-      <% if signed_in? %>
-        Signed in as: <%= current_user.email %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign in', sign_in_path %>
-      <% end %>
-    </header>
-    
-    <section>
-      <div id="flash">
-        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
+
+      <ul>
+        <li><%= link_to 'User Home', users_path(@user) %></li>
+        <li><%= link_to 'See all the dogs', users_path %></li>
+        <li><%= link_to 'Book a New Session', users_path %></li>
+
+        <% if @current_user %>
+          <li class='right'> Welcome <%=  @current_user.username %></li>                    
+          <li class='right'><%= link_to "Log-Out", logout_path, method: :delete %></li>
+        <% else %>
+          <li class='right'><%= link_to 'Sign-up', new_user_path %></li>
+          <li class='right'><%= link_to 'Login', new_login_path %></li>
         <% end %>
-      </div>
-      <%= yield %>
-    </section>
+      </ul>
+
+    <%= yield %>
   </body>
 </html>

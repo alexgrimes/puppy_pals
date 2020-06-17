@@ -1,0 +1,3 @@
+<%= @appointment.appointment_datetime.strftime("%B %d, %Y at %k:%M")%>
+<%= link_to @appointment.dog_name, dog_path(@appointment.dog_id) %>
+<%= link_to @appointment.user_username, user_path(@appointment.user_id) %><br>

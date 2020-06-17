@@ -1,6 +1,7 @@
-class CreateSessions < ActiveRecord::Migration[6.0]
+class CreateAppointments < ActiveRecord::Migration[6.0]
   def change
-    create_table :sessions do |t|
+    create_table :appointments do |t|
+      t.datetime :appointment_datetime
       t.string :description
       t.integer :match_id
 
