@@ -21,9 +21,9 @@ match1 = Match.create(user_id: alex.id, dog_id: dottie.id)
 match2 = Match.create(user_id: zoe.id, dog_id: belle.id)
 
 ########Session########
-session1 = Session.create(description: "Day in the park", match_id: match1.id)
-session2 = Session.create(description: "Companionship", match_id: match2.id)
-session3 = Session.create(description: "Hanging on the couch", match_id: match1.id)
+appointment1 = Appointment.create(description: "Day in the park", match_id: match1.id, appointment_datetime: DateTime.new(2019, 07, 24, 15, 00, 0))
+appointment2 = Appointment.create(description: "Companionship", match_id: match2.id, appointment_datetime: DateTime.new(2020, 04, 15, 18, 00, 0))
+appointment3 = Appointment.create(description: "Hanging on the couch", match_id: match1.id, appointment_datetime: DateTime.new(2020, 05, 06, 18, 00, 0))
 
 ######Review########
 first_review = Review.create(match_id: match1.id, dog_review: "Great dog!", dog_rating: 5)

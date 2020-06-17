@@ -4,7 +4,7 @@ class AppointmentsController < ApplicationController
   end 
 
   def show
-    @appoinments = Appointment.find(params[:id])
+    @appointment = Appointment.find(params[:id])
   end 
 
   def new
@@ -19,5 +19,11 @@ class AppointmentsController < ApplicationController
       render :new
     end 
   end 
+
+  private
+  def appointment_params
+    params.require(:user).permit(:description, :match_id, :appointment_datetime)
+  end 
+
 
 end 

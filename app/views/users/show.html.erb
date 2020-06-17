@@ -2,8 +2,8 @@
 
 <h2> Here are your puppy pals: </h2>
 
-<% @user.matches.each do |match| %>
-  <%= link_to dog.name, dog_path(dog)%> <%= dog.img_url%> <br>
+<% @user.matches.each do |m| %>
+  <%= link_to m.dog.name, dog_path(dog)%> <%= dog.img_url%> <br>
   <%end %>
   
 <h3> Here are your appointments: </h3>

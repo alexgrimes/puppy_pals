@@ -1,5 +1,11 @@
 <h1> New Appointment </h1>
 
+<h2> Let's set a date! Here are your puppy pals: </h2>
+
+<% @appointment.match.dog.each do |d| %>
+  <li><%= link_to d.name, dog_path(d) %></li>
+<% end %>
+
 <%= form_for @appointment do |f| %>
 <%= f.label :appointment_datetime %>
 <%= f.text_area :appointment_datetime %>
