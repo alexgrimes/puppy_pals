@@ -1,21 +1,17 @@
 <h1> New Review </h1>
 
 <h2> Let us know how its going with your pup: </h2>
-
+<br>
 
 <%= form_for @review do |f| %>
 
-<%= f.label :appointment %>
-<%= collection_select :appointment, :appointment_id, Appointment.all, :id, :description %>
-
-<%= f.label :match %>
-<%= collection_select :match, :match_id, Dog.all, :id, :name %>
-
-<%= f.label "Review" %>
-<%= f.text_area :dog_review %>
-
-<%= f.label "Rating" %>
-<%= f.number_field :dog_rating, within: 1..5 %>
-
-<%= f.submit %>
+<p><%= f.label :appointment %></p>
+<p><%= collection_select :appointment, :appointment_id, Appointment.all, :id, :description %></p>
+<p><%= f.label :match %></p>
+<p><%= collection_select :match, :match_id, Dog.all, :id, :name %></p>
+<p><%= f.label "Review" %></p>
+<p><%= f.text_area :dog_review %></p>
+<p><%= f.label "Rating" %></p>
+<p><%= f.number_field :dog_rating, within: 1..5 %></p>
+<p></p><%= f.submit %>
 <%end%>

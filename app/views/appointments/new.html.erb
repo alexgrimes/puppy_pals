@@ -1,17 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<p></p>
+<div class="new-app">
 <h1> New Appointment </h1>
-
-<h2> Let's set a date! Here are your puppy pals: </h2>
-
-
-<%= form_for @appointment do |f| %>
-<%= f.label :description %>
-<%= f.text_area :description %>
-
-<%= f.label :appointment_datetime %>
-<%= f.date_select :appointment_datetime %>
-
-<%= f.label :dog %>
-<%= collection_select :match, :dog_id, Dog.all, :id, :name %>
-
-<%= f.submit %>
+<p> <b>Let's set a date! Here are your puppy pals: </b></p>
+<br>
+<p><%= form_for @appointment do |f| %></p>
+<p><%= f.label :description %></p>
+<p><%= f.text_area :description %></p>
+<p><%= f.label :appointment_datetime %></p>
+<p><%= f.date_select :appointment_datetime %></p>
+<p><%= f.label :dog %></p>
+<p><%= collection_select :match, :dog_id, Dog.all, :id, :name %></p>
+<p><%= f.submit %></p>
 <%end%>
+</div>

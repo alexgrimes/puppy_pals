@@ -1,14 +1,10 @@
 <h1><%= @dog.name %></h1>
+<p>Name: <strong><%= @dog.name%></strong></p>
+<p>Breed: <%= @dog.breed %></p>
+<p>Size: <%= @dog.size %></p>
+<p>About: <%= @dog.about %></p>
+<p><%= image_tag @dog.img_url %></p>
 
-<ul>
-    <li>Name: <strong><%= @dog.name%></strong></li>
-    <li>Breed: <%= @dog.breed %></li>
-    <li>Size: <%= @dog.size %></li>
-    <li>About: <%= @dog.about %></li>
-    <%= link_to "See what people say about me", reviews_path %>
-    <li><%= image_tag @dog.img_url %></li>
-</ul>
 
-<h3> Check out what folks say about this pup: </h3>
-
-<%= link_to "Make an appointment with this pup", new_appointment_path %>
+<p><%= link_to "See what people say about me", reviews_path %></p>
+<p><%= link_to "Make an appointment with this pup", new_appointment_path %></p>

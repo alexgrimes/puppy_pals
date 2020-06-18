@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Dog.destroy_all
+Match.destroy_all
+Appointment.destroy_all
+Review.destroy_all
 
 #####USERS##########
 alex = User.create(username: "alexg123", password: "boogers")
@@ -26,6 +31,6 @@ appointment2 = Appointment.create(description: "Companionship", match_id: match2
 appointment3 = Appointment.create(description: "Hanging on the couch", match_id: match1.id, appointment_datetime: DateTime.new(2020, 05, 06, 18, 00, 0))
 
 ######Review########
-first_review = Review.create(match_id: match1.id, dog_review: "Great dog!", dog_rating: 5)
-second_review = Review.create(match_id: match2.id, dog_review: "Very well behaved!", dog_rating: 4)
+first_review = Review.create(appointment_id: appointment1.id, match_id: match1.id, dog_review: "Great dog!", dog_rating: 5)
+second_review = Review.create(appointment_id: appointment2.id, match_id: match2.id, dog_review: "Very well behaved!", dog_rating: 4)
 

@@ -1,6 +1,7 @@
 class DogsController < ApplicationController
   def index
     @dogs = Dog.all
+    @users = User.all
   end
   
   def show
@@ -23,7 +24,7 @@ class DogsController < ApplicationController
   def edit
     @dog = Dog.create(dog_params)
     if @dog.persisted?
-      redirect_to dog
+      redirect_to @dog
     else
       render :new
     end

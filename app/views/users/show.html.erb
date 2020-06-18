@@ -1,19 +1,21 @@
-<h1> Welcome <%= @user.username %>!</h1>
-<h3> Here are your puppy pals: </h3>
-<ul>
-  <% @user.matches.each do |m| %>
-    <%= link_to m.dog.name, dog_path%><br>
-  <%end %>
-<br>
+<!DOCTYPE html>
+<html lang="en">
+<div class="container">
+  <p><h1><%= @user.username %>'s Overview</h1></p>
+    <p><h3> Here are your puppy pals: </h3></p>
 
-<li><%= link_to 'Write a New Review', new_review_path %></li>
-  
-  <br>
-</ul>
-<h3> Here are your appointments: </h3>
-<ul>
-  <%= @user.appointments.each do |a| %>
-    <li><%= link_to a.description, appointment_path %> with <strong> <%= a.match.dog.name %> </strong> - <%= a.appointment_datetime.strftime("%B %d, %Y") %> </li>
-    <br>
-  <% end%>
-</ul>
+      <% @user.matches.each do |m| %>
+        <p><%= link_to m.dog.name, dog_path%></p>
+      <%end %>
+      
+      <br>
+  </div>
+
+<div class="app-list">
+  <h3> Here are your appointments: </h3>
+      <% @user.appointments.each do |a| %>
+        <p><%= link_to a.description, appointment_path %> with <strong> <%= a.match.dog.name %> </strong> - <%= a.appointment_datetime.strftime("%B %d, %Y") %> </p>
+      <% end %>
+  </div>
+</html>
+

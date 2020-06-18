@@ -3,18 +3,19 @@
   <p><%= error %></p>
   <% end %>
 <% end %>
-
+<div class="add-dog">
 <h1>Add a new dog!</h1>
 <%= form_for @dog do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :breed %><br>
-  <%= f.text_field :breed %><br>
-  <%= f.label :size %><br>
-  <%= f.text_field :size %><br>
-  <%= f.label :about %><br>
-  <%= f.text_field :about %><br>
-  <%= f.label :img_url %><br>
-  <%= f.text_field :img_url %><br>
-  <%= f.submit %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.label :breed %></p>
+  <p><%= f.text_field :breed %></p>
+  <p><%= f.label :size %></p>
+  <p><%= f.text_field :size %></p>
+  <p><%= f.label :about %></p>
+  <p><%= f.text_field :about %></p>
+  <p><%= f.label :img_url %></p>
+  <p><%= f.text_field :img_url %></p>
+  <p><%= f.submit %></p>
   <%end%>
+</div>
