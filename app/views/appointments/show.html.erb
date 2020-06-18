@@ -4,6 +4,7 @@
   <li>On: <%= @appointment.appointment_datetime.strftime("%B %d, %Y")%>
   <li>For: <%= @appointment.description %>
   <li><%= link_to "Write a review for this appointment", new_review_path %> </li>
+  <li><%= link_to "See all of your appointments", new_review_path %> </li>
   <br>
   <%= image_tag @appointment.match.dog.img_url %></h2>
 </ul>

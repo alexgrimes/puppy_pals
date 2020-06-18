@@ -5,10 +5,13 @@
     <li>Breed: <%= @dog.breed %></li>
     <li>Size: <%= @dog.size %></li>
     <li>About: <%= @dog.about %></li>
-    <%= link_to "See what people say about me", reviews_path %>
+    <h3> Check out what folks say about me: </h3>
+<ul>
+  <%= @dog.reviews.each do |r| %>
+    <li>Review: <%= link_to r.dog_review, reviews_path(@dog) %> Rating:  <%= r.dog_rating %> out of 5
+    <br>
+  <% end%>
+</ul>
     <li><%= image_tag @dog.img_url %></li>
 </ul>
-
-<h3> Check out what folks say about this pup: </h3>
-
 <%= link_to "Make an appointment with this pup", new_appointment_path %>

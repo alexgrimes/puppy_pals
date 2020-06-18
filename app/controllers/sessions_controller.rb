@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to users_path(@user)
+      redirect_to user_path(user)
     else 
       flash[:errors] = "Username or Password is Incorrect"
       redirect_to new_login_path
