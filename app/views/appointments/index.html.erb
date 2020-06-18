@@ -1,8 +1,8 @@
 <h1> All Appointments </h1>
 <ul>
-<%= @appointments.each do |appointment| %>
-  <li><%= link_to appointment.review.dog_rating, appointment_path(appointment.id) %> - 
-  <%= appointment.appointment_datetime.strftime("%B %d, %Y") %> - <% appointment.review.dog_rating%>
+<% @appointments.each do |appointment| %>
+  <li><%= link_to appointment.description, appointment_path(appointment.id) %> - 
+  <%= appointment.appointment_datetime.strftime("%B %d, %Y") %>
   <br>
   <% end %>
 </ul>

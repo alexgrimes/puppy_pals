@@ -7,11 +7,14 @@
     <li>About: <%= @dog.about %></li>
     <h3> Check out what folks say about me: </h3>
 <ul>
-  <%= @dog.reviews.each do |r| %>
+  <% @dog.reviews.each do |r| %>
     <li>Review: <%= link_to r.dog_review, reviews_path(@dog) %> Rating:  <%= r.dog_rating %> out of 5
     <br>
+    <br>
   <% end%>
+  <%= link_to "Make an appointment with this pup", new_appointment_path %>
+  <br>
+  <br>
 </ul>
-    <li><%= image_tag @dog.img_url %></li>
+    <%= image_tag @dog.img_url %>
 </ul>
-<%= link_to "Make an appointment with this pup", new_appointment_path %>

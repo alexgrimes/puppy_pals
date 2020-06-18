@@ -19,6 +19,8 @@ frank = Dog.create(name: "Frank", breed: "Chocolate Lab", size: "medium", about:
 #########Match#############
 match1 = Match.create(user_id: alex.id, dog_id: dottie.id)
 match2 = Match.create(user_id: zoe.id, dog_id: belle.id)
+match3 = Match.create(user_id: alex.id, dog_id: belle.id)
+match4 = Match.create(user_id: alex.id, dog_id: frank.id)
 
 ########Session########
 appointment1 = Appointment.create(description: "Day in the park", match_id: match1.id, appointment_datetime: DateTime.new(2019, 07, 24, 15, 00, 0))
@@ -28,4 +30,5 @@ appointment3 = Appointment.create(description: "Hanging on the couch", match_id:
 ######Review########
 first_review = Review.create(match_id: match1.id, dog_review: "Great dog!", dog_rating: 5)
 second_review = Review.create(match_id: match2.id, dog_review: "Very well behaved!", dog_rating: 4)
-
+third_review = Review.create(match_id: match3.id, dog_review: "Belle was a perfect angel!", dog_rating: 5)
+fourth_review = Review.create(match_id: match4.id, dog_review: "Frank is great!", dog_rating: 5)

@@ -13,9 +13,10 @@ class AppointmentsController < ApplicationController
 
   def create 
     @appointment = Appointment.new(appointment_params)
-    match = Match.create(user_id: @current_user.id, dog_id: params[:match][:dog_id])
-    @appointment.match_id = match.id
-    if @appointment.save
+    @match = Match.create(user_id: @current_user.id, dog_id: params[:match][:dog_id])
+    @appointment.match_id = @match.id
+    if @appointment.valid?
+      @appointment.save
       redirect_to @appointment
     else 
       render :new
@@ -24,7 +25,7 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:appointment).permit(:description, :appointment_datetime)
+    params.require(:appointment).permit(:match_id, :description, :appointment_datetime)
   end 
 
 

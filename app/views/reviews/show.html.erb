@@ -1,7 +1,7 @@
 <h2> Here's your review </h2>
 
 <h1><%= @review.dog_rating %></h1>
-<%= @review.match do |match| %>
+<% @review.match do |match| %>
     <li>
     <%= link_to "Review", review_path(review) %>
     </li>

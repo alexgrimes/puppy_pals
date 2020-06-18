@@ -15,5 +15,5 @@
   <%= @user.appointments.each do |a| %>
     <li><%= link_to a.description, appointment_path %> with <strong> <%= a.match.dog.name %> </strong> - <%= a.appointment_datetime.strftime("%B %d, %Y") %> </li>
     <br>
-  <% end%>
+  <% end %>
 </ul>

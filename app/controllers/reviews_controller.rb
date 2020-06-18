@@ -13,8 +13,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create(review_params)
-    if @review.save
-      redirect_to @user
+    if @review.valid?
+      @review.save
+      redirect_to @review.user
     else 
       render :new
     end 
@@ -22,6 +23,6 @@ class ReviewsController < ApplicationController
 
   private 
   def review_params
-      params.require(:review).permit(:dog_review, :dog_rating)
+      params.require(:review).permit(:match_id, :appointment_id, :dog_review, :dog_rating)
   end 
 end 

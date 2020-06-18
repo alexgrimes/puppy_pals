@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_014351) do
+ActiveRecord::Schema.define(version: 2020_06_16_013845) do
 
   create_table "appointments", force: :cascade do |t|
+    t.datetime "appointment_datetime"
     t.string "description"
     t.integer "match_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "appointment_datetime"
   end
 
   create_table "dogs", force: :cascade do |t|
@@ -41,15 +41,16 @@ ActiveRecord::Schema.define(version: 2020_06_17_014351) do
     t.integer "match_id"
     t.string "dog_review"
     t.integer "dog_rating"
+    t.integer "appointment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
   end
 
 end
