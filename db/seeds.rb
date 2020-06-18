@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #####USERS##########
-alex = User.create(username: "alexg123")
-zoe = User.create(username: "zoepups")
-nick = User.create(username: "nick19")
+alex = User.create(username: "alexg123", password: "boogers")
+zoe = User.create(username: "zoepups", password: "password")
+nick = User.create(username: "nick19", password: "alsoboogers")
 
 ########DOGS########
 dottie = Dog.create(name: "Dottie", breed: "Cattle Dog mix", size: "medium", about: "A little neurotic but the sweetest ever!", img_url: "https://kymkemp.com/wp-content/uploads/2018/10/get_image-1-3.jpg")

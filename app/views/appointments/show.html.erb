@@ -1,19 +1,9 @@
 <h2> You've scheduled an appointment with: </h2>
-<br>
 <ul>
   <li>Name: <%= @appointment.match.dog.name%>
-  <li>At: <%= @appointment.appointment_datetime.strftime("%B %d, %Y at %k:%M")%></h2>
-
-<%= link_to @appointment.dog_name, dog_path(@appointment.dog_id) %>
-<%= link_to @appointment.user_username, user_path(@appointment.user_id) %><br>
-
-<ul>
-    <li>Name: <strong><%= @employee.first_name%> <%= @employee.last_name%></strong></li>
-    <li>Nickname: <%= @employee.alias %></li>
-    <li>Title: <%= @employee.title %></li>
-    <li>Office: <%= @employee.office %></li>
-    <li>Dog: <%= @employee.dog.name %>
-    <%= image_tag @employee.img_url %>
+  <li>On: <%= @appointment.appointment_datetime.strftime("%B %d, %Y")%>
+  <li>For: <%= @appointment.description %>
+  <li><%= link_to "Write a review for this appointment", new_review_path %> </li>
+  <br>
+  <%= image_tag @appointment.match.dog.img_url %></h2>
 </ul>
-<%= link_to "Edit this employee", edit_employee_path(@employee) %>
-<%= link_to "Back to All Employees", employees_path %>

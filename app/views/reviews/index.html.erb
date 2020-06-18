@@ -1,0 +1,10 @@
+<h1> Reviews </h1>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li> <strong> <%= review.match.dog.name %> </strong> 
+    <%= review.dog_rating  %> - <%= review.dog_review %> </li>
+  <% end %>
+</ul>
+<p><%= link_to "Write a New Review", new_review_path %></p> 
+    

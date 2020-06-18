@@ -12,7 +12,7 @@ class MatchesController < ApplicationController
   end 
 
   def create 
-    @match = Match.create(match_params)
+    @match = Match.new(match_params)
     if @match.save
       redirect_to @match
     else 
@@ -22,7 +22,7 @@ class MatchesController < ApplicationController
 
   private
   def match_params
-    params.require(:user).permit(:user_id, :dog_id)
+    params.require(:match).permit(:user_id, :dog_id)
   end 
 
 end 
